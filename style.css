@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1c1a1c;
+}
+body::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+a,
+ul,
+li {
+  text-decoration: none;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  overflow-x: hidden;
+  background-color: #1a1a1a;
+}
+
+/* For Pointer */
+#pointer {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  z-index: 999;
+  transition: all 0.1s ease;
+  filter: blur(10px);
+}
+.bar {
+  display: none;
+}
+/* NavBar */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 5rem;
+  height: 10vh;
+  width: 100%;
+  border-bottom: 1px solid whitesmoke;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  position: fixed;
+  top: 0%;
+  transition: background-color 0.3s ease;
+  z-index: 99;
+}
+.nav-first > a {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  filter: drop-shadow(8px 5px 1px red);
+}
+.nav-second {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 1.4rem;
+  transition: all 0.5s ease-in-out;
+}
+.nav-second.active {
+  height: 100vh;
+  padding-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-size: 3rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  z-index: 9999;
+  gap: 2rem;
+  overflow: hidden;
+}
+.nav-second > a {
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  filter: drop-shadow(6px 5px 1px red);
+}
+.nav.scrolled {
+  background: #1a1a1a;
+}
+/* Home */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  gap: 5rem;
+  color: #ffffff;
+}
+.home-content > h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+.home-content > p {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+.home-btn {
+  padding: 1rem 1.7rem;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.home-btn > a {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+}
+.home-btn:hover {
+  box-shadow: 5px 5px 0px #ffffff;
+}
+
+#preview {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0 5rem;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+  background-size: contain;
+}
+#preview > h1 {
+  padding-top: 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  filter: drop-shadow(5px 7px 1px red);
+}
+.images > img {
+  height: 70vh;
+  width: 15vw;
+  aspect-ratio: 1;
+}
+#download {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 0rem 5rem;
+}
+#download > h1 {
+  padding-top: 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  filter: drop-shadow(5px 7px 1px red);
+}
+.download {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.download > p {
+  width: 90%;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  color: #ffff;
+}
+.download-btn {
+  padding: 1rem 1.7rem;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.download-btn > a {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+}
+.download-btn:hover {
+  box-shadow: 5px 5px 0px #ffffff;
+}
+#contact {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+  padding: 0rem 5rem;
+  gap: 3rem;
+}
+
+#contact > h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  filter: drop-shadow(5px 7px 1px red);
+}
+.contact-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.contact-image {
+  height: 20rem;
+  width: 20rem;
+  border-radius: 100%;
+}
+.rotate-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+.rotate-icons a:nth-child(1) {
+  transform: translate(-25px, 0px);
+}
+.rotate-icons a:nth-child(3) {
+  transform: translate(-25px, 0px);
+}
+
+.rotate-icons a > i {
+  font-size: 40px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate-icons a > i:hover {
+  animation: rotate 1s infinite linear alternate;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-top: 1px solid #fff;
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.footer > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid #fff;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 95%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+@media (max-width: 1100px) {
+  #home {
+    padding: 0 2rem;
+  }
+  .home-content {
+    gap: 3rem;
+  }
+  .home-content > h1 {
+    font-size: 2.5rem;
+  }
+  .home-content > p {
+    font-size: 1.5rem;
+  }
+  #preview {
+    padding: 0 1rem;
+  }
+  .images > img {
+    height: 55vh;
+  }
+  #download {
+    padding: 0 1rem;
+    gap: 1.7rem;
+  }
+  .download > p {
+    font-size: 1.5rem;
+  }
+  #contact {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 950px) {
+  .nav {
+    padding: 0 1rem;
+  }
+  .nav-second {
+    display: none;
+  }
+  .bar {
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .nav-second > a {
+    font-size: 2rem;
+  }
+}
+@media (width < 700px) {
+  #home {
+    padding: 0;
+  }
+  .home-content {
+    justify-content: space-between;
+    width: 99%;
+  }
+  .home-content > h1 {
+    font-size: 1.5rem;
+  }
+  .home-content > p {
+    font-size: 1.3rem;
+  }
+}
+@media (width < 450px) {
+  .home-content {
+    padding-top: 2rem;
+  }
+  .home-content > p {
+    width: 90%;
+  }
+}
+@media (width < 375px) {
+  .home-content {
+    width: 100%;
+    gap: 4rem;
+    justify-content: center;
+  }
+  .home-content > h1 {
+    font-size: 1.3rem;
+  }
+  .home-content > p {
+    font-size: 1rem;
+  }
+}
+/* Preview */
+
+@media (width < 950px) {
+  #preview {
+    padding: 0 1rem;
+  }
+  #download {
+    padding: 0 1rem;
+  }
+  .images {
+    gap: 3rem;
+  }
+  .images > img {
+    height: 60vh;
+    width: 25vw;
+  }
+}
+@media (width < 726px) {
+  #preview {
+    gap: 1rem;
+  }
+  .images {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+}
+@media (width < 623px) {
+  .images > img {
+    width: 50vw;
+    height: 60vh;
+  }
+}
+@media (width < 405px) {
+  .images > img {
+    width: 60vw;
+    height: 70vh;
+  }
+}
+@media (width < 500px) {
+  #download {
+    gap: 1rem;
+  }
+  .download > p {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
+@media (width < 400px) {
+  .contact-image {
+    height: 15rem;
+    width: 15rem;
+  }
+}
