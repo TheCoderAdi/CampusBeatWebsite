@@ -6,7 +6,7 @@ const navSecond = document.querySelector(".nav-second");
 const lists = document.querySelectorAll(".nav-second > a");
 
 btn.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5500/index.html#preview";
+  window.location.href = "https://campusbeat.vercel.app/#preview";
 });
 downloadBtn.addEventListener("click", (e) => {
   e.preventDefault();
